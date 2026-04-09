@@ -10,7 +10,7 @@
    - background.js
    - content.js
    - utils.js
-   - icons/ (crie uma pasta chamada 'icons' e adicione ícones PNG de 16x16, 48x48 e 128x128 pixels chamados icon16.png, icon48.png e icon128.png)
+   - **Ícones**: Removi a obrigatoriedade de ícones no `manifest.json` para que você consiga carregar a extensão imediatamente sem erros. O Chrome usará um ícone padrão. Se quiser adicionar os seus, basta criar a pasta `icons` com os arquivos PNG e atualizar o manifesto.
 3. Abra o Google Chrome e acesse `chrome://extensions/`.
 4. Ative o **Modo do desenvolvedor** no canto superior direito.
 5. Clique em **Carregar sem compactação** (Load unpacked).

@@ -32,7 +32,6 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     // Notificar o usuário (opcional, via mensagem para o content script ou popup)
     chrome.notifications.create({
       type: 'basic',
-      iconUrl: 'icons/icon128.png',
       title: 'Prompt Vault',
       message: 'Texto salvo com sucesso no seu Vault!'
     });
