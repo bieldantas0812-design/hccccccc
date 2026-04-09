@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações - Prompt Vault</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-icon">⚡</span>
+        <h2>Prompt Vault</h2>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="all">Todos os Prompts</button>
+        <button class="nav-item" data-view="favs">Favoritos</button>
+        <button class="nav-item" data-view="categories">Categorias</button>
+        <div class="nav-divider"></div>
+        <button class="nav-item" id="btn-import">Importar JSON</button>
+        <button class="nav-item" id="btn-export">Exportar JSON</button>
+      </nav>
+      <div class="sidebar-footer">
+        <p>v1.0.0</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div class="header-left">
+          <h1 id="view-title">Todos os Prompts</h1>
+          <span id="prompt-count" class="badge">0</span>
+        </div>
+        <div class="header-right">
+          <div class="search-box">
+            <input type="text" id="main-search" placeholder="Pesquisar...">
+          </div>
+          <button id="btn-new-prompt" class="btn-primary">+ Novo Prompt</button>
+        </div>
+      </header>
+
+      <div class="prompts-grid" id="prompts-grid">
+        <!-- Cards de prompts gerenciáveis -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal de Edição/Criação -->
+  <div id="modal-edit" class="modal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="modal-title">Editar Prompt</h2>
+        <button class="btn-close">&times;</button>
+      </header>
+      <form id="prompt-form">
+        <input type="hidden" id="edit-id">
+        
+        <div class="form-group">
+          <label for="title">Título</label>
+          <input type="text" id="title" required placeholder="Ex: Gerador de Personas">
+        </div>
+
+        <div class="form-group">
+          <label for="content">Conteúdo do Prompt</label>
+          <p class="help-text">Use {variavel} para campos dinâmicos.</p>
+          <textarea id="content" required placeholder="Escreva seu prompt aqui..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="category">Categoria</label>
+            <select id="category">
+              <option value="Geral">Geral</option>
+              <option value="Imagem">Imagem</option>
+              <option value="Vídeo">Vídeo</option>
+              <option value="Copy">Copy</option>
+              <option value="Vendas">Vendas</option>
+              <option value="Automação">Automação</option>
+              <option value="Estudo">Estudo</option>
+              <option value="Roteiro">Roteiro</option>
+              <option value="Persona">Persona</option>
+              <option value="Realismo">Realismo</option>
+              <option value="Anúncios">Anúncios</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="platform">Plataforma (Opcional)</label>
+            <input type="text" id="platform" placeholder="Ex: ChatGPT, Midjourney">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tags">Tags (separadas por vírgula)</label>
+          <input type="text" id="tags" placeholder="Ex: seo, criativo, profissional">
+        </div>
+
+        <div class="form-group checkbox">
+          <input type="checkbox" id="favorite">
+          <label for="favorite">Marcar como Favorito ⭐</label>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="btn-delete" class="btn-danger" style="display:none;">Excluir</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn-secondary btn-close">Cancelar</button>
+          <button type="submit" class="btn-primary">Salvar Prompt</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <input type="file" id="file-input" style="display:none" accept=".json">
+
+  <script src="utils.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

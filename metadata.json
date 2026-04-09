@@ -1,0 +1,5 @@
+{
+  "name": "Prompt Vault - Chrome Extension",
+  "description": "Uma extensão completa para gerenciar, organizar e reutilizar prompts de IA com variáveis dinâmicas e filtros por domínio.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Vault</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="icon">⚡</span>
+        <h1>Prompt Vault</h1>
+      </div>
+      <button id="btn-options" title="Gerenciar todos os prompts">⚙️</button>
+    </header>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Buscar prompts...">
+      <button id="btn-filter-fav" title="Filtrar favoritos">⭐</button>
+    </div>
+
+    <div class="filters-scroll">
+      <button class="filter-chip active" data-category="all">Todos</button>
+      <button class="filter-chip" data-category="domain" id="chip-domain">Neste Site</button>
+      <button class="filter-chip" data-category="copy">Copy</button>
+      <button class="filter-chip" data-category="imagem">Imagem</button>
+      <button class="filter-chip" data-category="estudo">Estudo</button>
+    </div>
+
+    <main id="prompts-list">
+      <!-- Prompts serão inseridos aqui via JS -->
+      <div class="empty-state">
+        <p>Nenhum prompt encontrado.</p>
+      </div>
+    </main>
+
+    <footer>
+      <button id="btn-add-quick" class="btn-primary">+ Novo Prompt</button>
+    </footer>
+  </div>
+
+  <!-- Modal para preencher variáveis -->
+  <div id="modal-variables" class="modal">
+    <div class="modal-content">
+      <h3>Preencher Variáveis</h3>
+      <div id="variables-form"></div>
+      <div class="modal-actions">
+        <button id="btn-cancel-var" class="btn-secondary">Cancelar</button>
+        <button id="btn-copy-final" class="btn-primary">Copiar Final</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
